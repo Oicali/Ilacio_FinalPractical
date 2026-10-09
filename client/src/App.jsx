@@ -136,7 +136,7 @@ function App() {
       {students.length === 0 && <p>No recorded students</p>}
 
       {students.map((student) => (
-        <div key={student.id}>
+        <div key={student._id}>
           <p>Name: {student.name}</p>
           <p>Course: {student.course}</p>
           <p>Age: {student.age}</p>
