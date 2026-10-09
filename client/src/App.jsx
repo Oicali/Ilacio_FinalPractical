@@ -47,8 +47,11 @@ function App() {
   const [editingId, setEditingId] = useState(null)
 
   const getStudents = () => {
-    axios.get(`${API}/students`).then((response) => {
-      setStudents(response.data);
+    
+axios.get(`${API}/students`).then((response) => {
+      setStudents(Array.isArray(response.data) ? response.data : []);
+    }).catch((error) => {
+      console.log("Fetch error", error);
     })
   }
 
